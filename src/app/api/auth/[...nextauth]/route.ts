@@ -1,5 +1,7 @@
+import axios from "@/api";
 import NextAuth from "next-auth/next"
 import CredentialsProvider from "next-auth/providers/credentials"
+import { cookies } from "next/headers";
 
 const authOptions = {
     providers: [
@@ -10,11 +12,42 @@ const authOptions = {
                 password: { label: 'Senha', type: 'password' }
             },
             async authorize(credentials) {
-                console.log('fui chamado pela função signIn')
-                console.log('Credentials:', credentials);
-            }
-        })
+                if (!credentials) throw new Error("no credentials");
+
+                const {
+                    data: { access_token },
+                } = await axios.post("/auth/login", {
+                    email: credentials?.email,
+                    password: credentials?.password,
+                });
+
+                cookies().set("access_token", access_token);
+
+                const { sub: id } = JSON.parse(
+                    Buffer.from(access_token.split(".")[1], "base64").toString()
+                );
+
+                const { data: user } = await axios.get(`/users/${id}`, {
+                    headers: { Authorization: `Bearer ${access_token}` },
+                });
+
+                return {
+                    ...user,
+                    access_token,
+                    image: user.avatar,
+                };
+            },
+        }),
     ],
+    callbacks: {
+        async jwt({ token, user }) {
+            return { ...token, ...user };
+        },
+        async session({ session, token }) {
+            session.user = token as any;
+            return session;
+        },
+    },
     pages: { signIn: '/login' }
 }
 

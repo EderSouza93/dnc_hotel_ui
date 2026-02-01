@@ -4,6 +4,7 @@ import RadioGroup from "@/component/Form/RadioGroup";
 import TextField from "@/component/Form/TextField";
 import Link from "@/component/Link";
 import { signup } from "../api/auth/signup/route";
+import PasswordFields from "./PasswordFields";
 
 const CadastrarPage = () => {
   return (
@@ -31,22 +32,7 @@ const CadastrarPage = () => {
             className="mt-2"
             required
         />
-        <TextField
-            label="Senha"
-            type="password"
-            id="password"
-            name="password"
-            className="mt-2"
-            required
-        />
-        <TextField
-            label="Confirmar senha"
-            type="password"
-            id="confirm-password"
-            name="confirm-password"
-            className="mt-2"
-            required
-        />
+        <PasswordFields />
         <RadioGroup
             options={[
                 {label: 'Sim', value: 'ADMIN', id: 'yes'},
