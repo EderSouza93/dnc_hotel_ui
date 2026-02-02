@@ -1,9 +1,11 @@
 "use server"
 
 import axios from "@/api";
+import { redirect } from "next/navigation";
 
 export async function signup(formData: FormData) {
-    const avatar = formData.get('avatar') as any;
+    try {
+        const avatar = formData.get('avatar') as any;
     const formDataAvatar = new FormData()
     formDataAvatar.set('avatar', avatar)
 
@@ -21,7 +23,7 @@ export async function signup(formData: FormData) {
     })
 
     if (avatar) {
-        const avatarData = axios.post('/avatar', formDataAvatar, {
+        const avatarData = await axios.post('/users/avatar', formDataAvatar, {
             headers: {
                 Authorization: `Bearer ${access_token}`
             }
@@ -29,4 +31,10 @@ export async function signup(formData: FormData) {
         console.log({ data, access_token, avatarData })
     }
 
+    } catch (error) {
+        console.log('trata o erro', {error})
+    }
+
+    redirect('/login')
+    
 }

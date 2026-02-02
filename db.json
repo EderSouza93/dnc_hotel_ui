@@ -13,6 +13,29 @@
       "password": "12345",
       "role": "ADMIN",
       "id": 2
+    },
+    {
+      "name": "RafaelTest",
+      "email": "rafaelltes@gmail.com",
+      "password": "12345",
+      "role": "ADMIN",
+      "id": 3,
+      "avatar": null,
+      "createdAt": "2026-02-01T20:03:40.411Z"
+    },
+    {
+      "name": "fulano",
+      "email": "ederdev.93@gmail.com",
+      "password": "1234",
+      "role": "USER",
+      "id": 4
+    },
+    {
+      "name": "fulano",
+      "email": "ederdev.93@gmail.com",
+      "password": "1234",
+      "role": "USER",
+      "id": 5
     }
   ]
 }
