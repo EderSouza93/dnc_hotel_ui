@@ -36,6 +36,13 @@
       "password": "1234",
       "role": "USER",
       "id": 5
+    },
+    {
+      "name": null,
+      "email": "ederaldo.souza93@gmail.com",
+      "password": null,
+      "role": null,
+      "id": 6
     }
   ]
 }
