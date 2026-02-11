@@ -1,14 +1,38 @@
+"use client";
 import Button from "@/component/Button";
 import TextField from "@/component/Form/TextField";
 import Link from "@/component/Link";
+import { signIn } from "next-auth/react";
+import { FormEvent } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const router = useRouter();
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    const response = await signIn("credentials", {
+      redirect: false,
+      email,
+      password,
+    });
+
+    if (response?.ok) {
+      router.push("/");
+    } else {
+      alert("erro na autenticação");
+    }
+  }
   return (
     <article className="max-w-96 w-full flex justify-center items-center flex-col py-4 px-6 border border-light-grey-500 rounded-2xl">
       <span>Entrar ou cadastra-se</span>
 
       <h3 className="w-full text-left text-xl pt-4">Bem vindo a DNC Hotel!</h3>
-      <form className="w-full">
+      <form className="w-full" onSubmit={handleSubmit}>
         <TextField
           id="email"
           name="email"

@@ -2,7 +2,7 @@ import Button from "@/component/Button";
 import TextField from "@/component/Form/TextField";
 import Link from "@/component/Link";
 import Image from "next/image";
-import { signup } from "../api/auth/signup/route";
+import { signup } from "../api/auth/signup/actions";
 
 const EsqueciSenhaPage = () => {
   return (
