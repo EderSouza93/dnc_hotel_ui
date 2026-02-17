@@ -1,6 +1,6 @@
-
+"use client";
 import Link from "@/component/Link";
-import User
+import UserForm from "@/component/UserForm";
 
 const CadastrarPage = () => {
   return (
