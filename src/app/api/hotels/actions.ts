@@ -4,9 +4,8 @@ import { Hotel, HotelPagination } from "@/types/Hotel";
 import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 
-//Todo: look if the accessToken value is 'accessToken' or 'access_token' on each function
 export async function getHotels(page: number, limit: number): Promise<HotelPagination> {
-    const accessToken = cookies().get('accessToken')?.value;
+    const accessToken = cookies().get('access_token')?.value;
 
     const { data } = await axios.get('/hotels', {
         params: { page, limit },
@@ -19,7 +18,7 @@ export async function getHotels(page: number, limit: number): Promise<HotelPagin
 }
 
 export async function getHotelDetail(id: number): Promise<Hotel> {
-    const accessToken = cookies().get('accessToken')?.value;
+    const accessToken = cookies().get('access_token')?.value;
 
     const { data } = await axios.get(`/hotels/${id}`, {
         headers: {
@@ -31,7 +30,7 @@ export async function getHotelDetail(id: number): Promise<Hotel> {
 }
 
 export async function getHotelByOwner(): Promise<Hotel[]> {
-    const accessToken = cookies().get('accessToken')?.value;
+    const accessToken = cookies().get('access_token')?.value;
 
     const { data } = await axios.get('hotels/owner', {
         headers: { Authorization: `Bearer ${accessToken}` }
@@ -41,7 +40,7 @@ export async function getHotelByOwner(): Promise<Hotel[]> {
 }
 
 export async function getHotelById(id: number): Promise<Hotel> {
-    const accessToken = cookies().get('accessToken')?.value;
+    const accessToken = cookies().get('access_token')?.value;
 
     const { data } = await axios.get(`hotels/${id}`, {
         headers: { Authorization: `Bearer ${accessToken}` }
@@ -51,7 +50,7 @@ export async function getHotelById(id: number): Promise<Hotel> {
 }
 
 export async function createHotel(prevState: any, formData: FormData) {
-    const accessToken = cookies().get('accessToken')?.value;
+    const accessToken = cookies().get('access_token')?.value;
     if (!accessToken) redirect('/login');
 
     try {
@@ -98,7 +97,7 @@ export async function createHotel(prevState: any, formData: FormData) {
 }
 
 export async function updateHotel(prevState: any, formData: FormData) {
-    const accessToken = cookies().get('accessToken')?.value;
+    const accessToken = cookies().get('access_token')?.value;
     if (!accessToken) redirect('/login');
 
     try {

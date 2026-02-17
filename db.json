@@ -5,6 +5,7 @@
       "name": "Eder Souza",
       "email": "edersouza93@gmail.com",
       "password": "12345",
+      "role": "ADMIN",
       "avatar": null
     },
     {

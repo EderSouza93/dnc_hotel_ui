@@ -5,6 +5,7 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { User, UserProfile } from '@/types/User';
 import { getHotelByOwner } from '../hotels/actions';
+import { getReservationByUser } from '../reservations/actions';
 
 export async function getProfile(): Promise<UserProfile> {
     const accessToken = cookies().get('access_token')?.value;
@@ -24,7 +25,49 @@ export async function getProfile(): Promise<UserProfile> {
         }
 
         return data;
+
     } else {
-        const [reservation] = await getReserva
+        const [reservation] = await getReservationByUser();
+
+        if (reservation) {
+            return { ...data, lastReservation: reservation}
+        }
+
+        return data;
     }
+}
+
+export async function updateProfile(prevState: any, formData: FormData): Promise<User> {
+    const accessToken = cookies().get('access_token')?.value;
+    if (!accessToken) redirect('/login')
+
+    try {
+        const avatar = formData.get('avatar') as File;
+
+        const {id} = decryptToken(accessToken)
+
+        const payload = {
+            "name": formData.get('name'),
+            "email": formData.get('email'),
+        }
+
+        axios.patch(`/users/${id}`, payload, {
+            headers: { Authorization: `Bearer ${accessToken}` }
+        })
+
+        if (avatar.size) {
+            const formDataAvatar = new FormData()
+            formDataAvatar.set('avatar', avatar)
+
+            await axios.post('/users/avatar', formDataAvatar, {
+                headers: {
+                    Authorization: `Bearer ${accessToken}`
+                }
+            })
+        }
+    } catch (error) {
+        console.error('Erro: ', error)
+    }
+
+    redirect('/perfil')
 }
