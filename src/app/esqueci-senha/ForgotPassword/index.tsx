@@ -19,7 +19,7 @@ const ForgotPassword = () => {
     >
       {state?.message && <Alert type="danger">{state.message}</Alert>}
       <Image
-        src="/forgot-passord.svg"
+        src="/forgot-password.svg"
         alt="Ilustração esqueci minha senha"
         width={172}
         height={167}
