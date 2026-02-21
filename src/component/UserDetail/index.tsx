@@ -41,7 +41,7 @@ const UserDetail = ({ reservation }: UserDetailProps) => {
   return (
     <div className="mt-4 flex">
       <Image
-        src={user.avatar ?? "/default-profile.jpg"}
+        src={user.avatar ?? "/default_profile.jpg"}
         alt={`Foto do anfitrião ${user.name}`}
         width={56}
         height={56}
