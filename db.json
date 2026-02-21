@@ -2,48 +2,45 @@
   "users": [
     {
       "id": 1,
-      "name": "Eder Souza",
-      "email": "edersouza93@gmail.com",
-      "password": "12345",
+      "email": "fabio@teste.com",
+      "name": "Fabio Tetsuo",
       "role": "ADMIN",
+      "avatar": "/user-photo.jpg",
+      "createdAt": "2024-07-28T16:25:58.655Z",
+      "password": "12345"
+    },
+    {
+      "id": 2,
+      "name": "Joao Teste",
+      "email": "joao@teste.com",
+      "password": "12345",
+      "createdAt": "2024-07-28T16:25:58.655Z",
       "avatar": null
     },
     {
-      "name": "Rafael DJ",
-      "email": "rafadj@gmail.com",
-      "password": "12345",
+      "name": "Fulano de Tal",
+      "email": "fulano@teste.com",
+      "password": "asdasd",
       "role": "ADMIN",
-      "id": 2
+      "id": 3
     },
     {
-      "name": "RafaelTest",
-      "email": "rafaelltes@gmail.com",
+      "name": "Teste DNC",
+      "email": "teste@dnc.com.br",
       "password": "12345",
       "role": "ADMIN",
-      "id": 3,
+      "id": 4,
       "avatar": null,
-      "createdAt": "2026-02-01T20:03:40.411Z"
+      "createdAt": "2024-08-11T21:45:05.938Z"
     },
     {
-      "name": "fulano",
-      "email": "ederdev.93@gmail.com",
-      "password": "1234",
-      "role": "USER",
-      "id": 4
-    },
-    {
-      "name": "fulano",
-      "email": "ederdev.93@gmail.com",
-      "password": "1234",
-      "role": "USER",
-      "id": 5
-    },
-    {
-      "name": "Eder Souza",
-      "email": "ederaldo.souza93@gmail.com",
+      "name": "Teste DNC",
+      "email": "teste@dnc.com.br",
       "password": "12345",
-      "role": null,
-      "id": 6
+      "role": "ADMIN",
+      "id": 5,
+      "avatar": null,
+      "createdAt": "2024-08-11T21:51:29.224Z"
     }
   ],
   "hotels": [
@@ -59,10 +56,10 @@
       "updatedAt": "2024-08-10T16:35:12.233Z",
       "owner": {
         "id": 1,
-        "email": "edersouza93@gmail.com",
-        "name": "Eder Souza",
+        "email": "fabio@teste.com",
+        "name": "Fabio Tetsuo",
         "role": "ADMIN",
-        "avatar": null,
+        "avatar": "/user-photo.jpg",
         "createdAt": "2024-07-28T16:25:58.655Z",
         "password": "12345"
       }
@@ -79,10 +76,10 @@
       "updatedAt": "2024-08-10T16:35:12.233Z",
       "owner": {
         "id": 1,
-        "email": "edersouza93@gmail.com",
-        "name": "Eder Souza",
+        "email": "fabio@teste.com",
+        "name": "Fabio Tetsuo",
         "role": "ADMIN",
-        "avatar": null,
+        "avatar": "/user-photo.jpg",
         "createdAt": "2024-07-28T16:25:58.655Z",
         "password": "12345"
       }
@@ -99,10 +96,10 @@
       "updatedAt": "2024-08-10T16:35:12.233Z",
       "owner": {
         "id": 1,
-        "email": "edersouza93@gmail.com",
-        "name": "Eder Souza",
+        "email": "fabio@teste.com",
+        "name": "Fabio Tetsuo",
         "role": "ADMIN",
-        "avatar": null,
+        "avatar": "/user-photo.jpg",
         "createdAt": "2024-07-28T16:25:58.655Z",
         "password": "12345"
       }
@@ -119,10 +116,10 @@
       "updatedAt": "2024-08-10T16:35:12.233Z",
       "owner": {
         "id": 1,
-        "email": "edersouza93@gmail.com",
-        "name": "Eder Souza",
+        "email": "fabio@teste.com",
+        "name": "Fabio Tetsuo",
         "role": "ADMIN",
-        "avatar": null,
+        "avatar": "/user-photo.jpg",
         "createdAt": "2024-07-28T16:25:58.655Z",
         "password": "12345"
       }
@@ -137,12 +134,12 @@
       "ownerId": 1,
       "createdAt": "2024-08-10T16:35:12.233Z",
       "updatedAt": "2024-08-10T16:35:12.233Z",
-     "owner": {
+      "owner": {
         "id": 1,
-        "email": "edersouza93@gmail.com",
-        "name": "Eder Souza",
+        "email": "fabio@teste.com",
+        "name": "Fabio Tetsuo",
         "role": "ADMIN",
-        "avatar": null,
+        "avatar": "/user-photo.jpg",
         "createdAt": "2024-07-28T16:25:58.655Z",
         "password": "12345"
       }
@@ -159,10 +156,10 @@
       "updatedAt": "2024-08-10T16:35:12.233Z",
       "owner": {
         "id": 1,
-        "email": "edersouza93@gmail.com",
-        "name": "Eder Souza",
+        "email": "fabio@teste.com",
+        "name": "Fabio Tetsuo",
         "role": "ADMIN",
-        "avatar": null,
+        "avatar": "/user-photo.jpg",
         "createdAt": "2024-07-28T16:25:58.655Z",
         "password": "12345"
       }
@@ -179,10 +176,10 @@
       "updatedAt": "2024-08-10T16:35:12.233Z",
       "owner": {
         "id": 1,
-        "email": "edersouza93@gmail.com",
-        "name": "Eder Souza",
+        "email": "fabio@teste.com",
+        "name": "Fabio Tetsuo",
         "role": "ADMIN",
-        "avatar": null,
+        "avatar": "/user-photo.jpg",
         "createdAt": "2024-07-28T16:25:58.655Z",
         "password": "12345"
       }
@@ -199,10 +196,10 @@
       "updatedAt": "2024-08-10T16:35:12.233Z",
       "owner": {
         "id": 1,
-        "email": "edersouza93@gmail.com",
-        "name": "Eder Souza",
+        "email": "fabio@teste.com",
+        "name": "Fabio Tetsuo",
         "role": "ADMIN",
-        "avatar": null,
+        "avatar": "/user-photo.jpg",
         "createdAt": "2024-07-28T16:25:58.655Z",
         "password": "12345"
       }
@@ -219,10 +216,10 @@
       "updatedAt": "2024-08-10T16:35:12.233Z",
       "owner": {
         "id": 1,
-        "email": "edersouza93@gmail.com",
-        "name": "Eder Souza",
+        "email": "fabio@teste.com",
+        "name": "Fabio Tetsuo",
         "role": "ADMIN",
-        "avatar": null,
+        "avatar": "/user-photo.jpg",
         "createdAt": "2024-07-28T16:25:58.655Z",
         "password": "12345"
       }
@@ -239,10 +236,10 @@
       "updatedAt": "2024-08-10T16:35:12.233Z",
       "owner": {
         "id": 1,
-        "email": "edersouza93@gmail.com",
-        "name": "Eder Souza",
+        "email": "fabio@teste.com",
+        "name": "Fabio Tetsuo",
         "role": "ADMIN",
-        "avatar": null,
+        "avatar": "/user-photo.jpg",
         "createdAt": "2024-07-28T16:25:58.655Z",
         "password": "12345"
       }
@@ -257,14 +254,73 @@
       "ownerId": 1,
       "createdAt": "2024-08-10T16:35:12.233Z",
       "updatedAt": "2024-08-10T16:35:12.233Z",
-     "owner": {
+      "owner": {
         "id": 1,
-        "email": "edersouza93@gmail.com",
-        "name": "Eder Souza",
+        "email": "fabio@teste.com",
+        "name": "Fabio Tetsuo",
         "role": "ADMIN",
-        "avatar": null,
+        "avatar": "/user-photo.jpg",
         "createdAt": "2024-07-28T16:25:58.655Z",
         "password": "12345"
+      }
+    }
+  ],
+  "reservations": [
+    {
+      "id": 1,
+      "userId": 2,
+      "hotelId": 2,
+      "checkIn": "2024-08-30T03:00:00.000Z",
+      "checkOut": "2024-09-05T03:00:00.000Z",
+      "total": -7674,
+      "status": "PENDING",
+      "createdAt": "2024-08-10T21:06:07.818Z",
+      "updatedAt": "2024-08-10T21:06:07.818Z",
+      "user": {
+        "id": 2,
+        "name": "Joao Teste",
+        "email": "joao@teste.com",
+        "password": "12345",
+        "createdAt": "2024-07-28T16:25:58.655Z",
+        "avatar": null
+      }
+    },
+    {
+      "id": 1,
+      "userId": 2,
+      "hotelId": 2,
+      "checkIn": "2024-08-30T03:00:00.000Z",
+      "checkOut": "2024-09-05T03:00:00.000Z",
+      "total": -7674,
+      "status": "APPROVED",
+      "createdAt": "2024-08-10T21:06:07.818Z",
+      "updatedAt": "2024-08-10T21:06:07.818Z",
+      "user": {
+        "id": 2,
+        "name": "Joao Teste",
+        "email": "joao@teste.com",
+        "password": "12345",
+        "createdAt": "2024-07-28T16:25:58.655Z",
+        "avatar": null
+      }
+    },
+    {
+      "id": 1,
+      "userId": 2,
+      "hotelId": 2,
+      "checkIn": "2024-08-30T03:00:00.000Z",
+      "checkOut": "2024-09-05T03:00:00.000Z",
+      "total": -7674,
+      "status": "CANCELLED",
+      "createdAt": "2024-08-10T21:06:07.818Z",
+      "updatedAt": "2024-08-10T21:06:07.818Z",
+      "user": {
+        "id": 2,
+        "name": "Joao Teste",
+        "email": "joao@teste.com",
+        "password": "12345",
+        "createdAt": "2024-07-28T16:25:58.655Z",
+        "avatar": null
       }
     }
   ]

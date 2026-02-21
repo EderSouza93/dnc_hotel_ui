@@ -73,15 +73,15 @@ app.post("/users/avatar", (req, res) => {
   });
 });
 
-app.get('/hotels', (req, res) => {
+app.get("/hotels", (req, res) => {
   const page = Number(req.query.page) || 1;
   const perPage = Number(req.query.limit) || 10;
 
-  const hotels = app.db.get('hotels').value();
+  const hotels = app.db.get("hotels").value();
 
   const total = hotels.length;
 
-  const start = (page -1) * perPage;
+  const start = (page - 1) * perPage;
   const end = start + perPage;
 
   const paginatedHotels = hotels.slice(start, end);
@@ -91,8 +91,79 @@ app.get('/hotels', (req, res) => {
     page: page,
     per_page: perPage,
     data: paginatedHotels,
-  })
-})
+  });
+});
+
+app.post("/hotels", (req, res) => {
+  res.status(201).jsonp({
+    id: 3,
+    name: "Hotel Beira Mar",
+    description: "Hotel de frente para praia",
+    address: "Rua da praia, 123",
+    image: null,
+    price: 480,
+    ownerId: 4,
+    createdAt: "2024-08-11T17:16:49.100Z",
+    updatedAt: "2024-08-11T17:16:49.100Z",
+  });
+});
+
+app.patch("/hotels/:id", (req, res) => {
+  res.status(201).jsonp({
+    id: 3,
+    name: "Hotel Beira Mar",
+    description: "Hotel de frente para praia",
+    address: "Rua da praia, 123",
+    image: null,
+    price: 480,
+    ownerId: 4,
+    createdAt: "2024-08-11T17:16:49.100Z",
+    updatedAt: "2024-08-11T17:16:49.100Z",
+  });
+});
+
+app.patch("/hotel/image/:id", (req, res) => {
+  res.status(200).jsonp({
+    id: 3,
+    name: "Hotel Beira Mar",
+    description: "Hotel de frente para praia",
+    address: "Rua da praia, 123",
+    image: "1a4e0b0e-1849-4c56-be6d-3ce52a29ecechotel1.jpg",
+    price: 480,
+    ownerId: 4,
+    createdAt: "2024-08-11T17:16:49.100Z",
+    updatedAt: "2024-08-11T17:16:49.100Z",
+  });
+});
+
+app.get("/hotels/owner", (req, res) => {
+  const hotels = app.db.get("hotels").value();
+  res.status(200).jsonp(hotels);
+});
+
+app.post("/reservations", (req, res) => {
+  res.status(201).jsonp({
+    id: 1,
+    userId: 3,
+    hotelId: 2,
+    checkIn: "2024-08-30T03:00:00.000Z",
+    checkOut: "2024-09-05T03:00:00.000Z",
+    total: -7674,
+    status: "PENDING",
+    createdAt: "2024-08-10T21:06:07.818Z",
+    updatedAt: "2024-08-10T21:06:07.818Z",
+  });
+});
+
+app.get("/reservations/user", (req, res) => {
+  const reservations = app.db.get("reservations").value();
+  res.status(200).jsonp(reservations);
+});
+
+app.get("/reservations/hotel/:id", (req, res) => {
+  const reservations = app.db.get("reservations").value();
+  res.status(200).jsonp(reservations);
+});
 
 app.use(router);
 app.listen(3000);
