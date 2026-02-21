@@ -7,6 +7,22 @@ import { User, UserProfile } from '@/types/User';
 import { getHotelByOwner } from '../hotels/actions';
 import { getReservationByUser } from '../reservations/actions';
 
+export async function getUserById(id: number): Promise<User | null> {
+    const accessToken = cookies().get('access_token')?.value;
+    if (!accessToken) redirect('/login')
+
+    try {
+        const { data } = await axios.get<User>(`/users/${id}`, {
+            headers: { Authorization: `Bearer ${accessToken}` }
+        })
+
+        return data;
+    } catch (error) {
+        console.error(`Erro ao buscar usuário ${id}: `, error)
+        return null;
+    }
+}
+
 export async function getProfile(): Promise<UserProfile> {
     const accessToken = cookies().get('access_token')?.value;
     if (!accessToken) redirect('/login')
